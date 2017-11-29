@@ -1,4 +1,4 @@
-package com.lapoint.lapointtrips;
+package com.lapointcamps.trips;
 
 import com.facebook.react.ReactActivity;
 
