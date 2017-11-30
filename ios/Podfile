@@ -21,4 +21,8 @@ target 'LapointTrips' do
   #pod 'Firebase/Messaging'
   #pod 'Firebase/RemoteConfig'
   #pod 'Firebase/Storage'
+
+  pod 'FBSDKCoreKit'
+  pod 'FBSDKLoginKit'
+  pod 'FBSDKShareKit'
 end

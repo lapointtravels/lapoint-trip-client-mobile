@@ -3,24 +3,34 @@ import { StyleSheet, Platform, Image, Text, View } from 'react-native';
 
 import firebase from 'react-native-firebase';
 
+import Auth from './components/Auth';
 import TabBar from './components/TabBar.ios';
 
 export default class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      // firebase things?
+      authed: false
     };
   }
 
   componentDidMount() {
-    // firebase things?
+    _this = this;
+    this.unsubscribe = firebase.auth().onAuthStateChanged(user => {
+      _this.setState({authed: (user != null)});
+    });
+  }
+
+  componenWillUnmount() {
+    this.unsubscribe();
   }
 
   render() {
-    return (
-      <TabBar/>
-    );
+    if (this.state.authed) {
+      return (<TabBar/>);
+    } else {
+      return (<Auth/>);
+    }
   }
 }
 
