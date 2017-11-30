@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Platform, Image, Text, View } from 'react-native';
 import { db } from '../config/constants';
 
-export default class Question extends Component {
+export default class Question extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
