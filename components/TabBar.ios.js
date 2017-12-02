@@ -3,6 +3,7 @@ import { StyleSheet, Platform, Image, Text, View, TabBarIOS } from 'react-native
 
 import Home from './Home';
 import Question from './Question';
+import Profile from './Profile';
 
 export default class TabBar extends React.Component {
   constructor() {
@@ -34,6 +35,16 @@ export default class TabBar extends React.Component {
             });
           }}>
           <Question/>
+        </TabBarIOS.Item>
+        <TabBarIOS.Item
+          selected={this.state.selectedTab === 'profile'}
+          systemIcon='contacts'
+          onPress={() => {
+            this.setState({
+              selectedTab: 'profile',
+            });
+          }}>
+          <Profile/>
         </TabBarIOS.Item>
       </TabBarIOS>
     );

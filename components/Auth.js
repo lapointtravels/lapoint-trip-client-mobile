@@ -6,7 +6,7 @@ import { StyleSheet, Platform, Image, Text, View } from 'react-native';
 export default class Auth extends React.Component {
   render () {
     return (
-      <View>
+      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
         <LoginButton
           readPermissions={["public_profile", "email"]}
           onLoginFinished={
